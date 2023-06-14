@@ -28,5 +28,9 @@ public class ProdutoController {
         List<Produto> produtos = produtoRepository.findAll();
         return ResponseEntity.ok().body(produtos);
     }
+    @GetMapping("/teste")
+    public ResponseEntity<String> getTeste() {
+        return ResponseEntity.ok("ALTERAÇÃO NA APLICAÇÃO");
+    }
 
 }
