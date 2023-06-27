@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/produto")
 @Slf4j
 public class ProdutoController {
-
     private ProdutoRepository produtoRepository;
 
     public ProdutoController(ProdutoRepository produtoRepository) {
@@ -23,9 +22,7 @@ public class ProdutoController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Produto> post(@RequestBody Produto produto) {
-
         Produto retornoDb = produtoRepository.save(produto);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(retornoDb);
     }
 
@@ -33,11 +30,5 @@ public class ProdutoController {
     public ResponseEntity<List<Produto>> get() {
         List<Produto> produtos = produtoRepository.findAll();
         return ResponseEntity.ok().body(produtos);
-    }
-
-    @GetMapping("/teste")
-    public ResponseEntity<String> getTeste(){
-        // UM MILHÃO DE COISAS!
-        return ResponseEntity.ok("NOVA FUNCIONALIDADE DESENVOLVIDA");
     }
 }
