@@ -35,6 +35,6 @@ public class ProdutoController {
 
     @GetMapping("/teste")
     public ResponseEntity<String> getTest(){
-       return ResponseEntity.ok("NOVA FUNCIONALIDADE!!");
+       return ResponseEntity.ok("ESTAMOS EM PRODUÇÃO :)");
     }
 }
